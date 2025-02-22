@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de Mauricio Aguilar, desarrollador Full Stack."
+    />
+    <meta
+      name="keywords"
+      content="Desarrollador, Full Stack, Portafolio, Web"
+    />
+    <meta name="author" content="Mauricio Aguilar" />
+    <title>Web Mauricio Aguilar</title>
+    <link rel="stylesheet" href="portafolio.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+  </head>
+  <body>
+    <span class="sombra">
+      <section id="inicio" class="inicio">
+        <div class="contenido">
+          <header>
+            <div class="logo">
+              <i class="fa-solid fa-fingerprint"></i>
+              <h1>Mauricio</h1>
+            </div>
+            <nav id="nav">
+              <a href="#inicio">Inicio</a>
+              <a href="#servicios">Servicios</a>
+              <a href="#skills">Skills</a>
+              <a href="#proyectos">Proyectos</a>
+              <a href="#contacto">Contacto</a>
+            </nav>
+            <div id="icono-nav" onclick="responsiveMenu()">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="redes">
+              <a
+                href="https://www.facebook.com/profile.php?id=100009075968824"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href="https://github.com/MauricioAguilarPardo90"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/mauricioaguilarpardo/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mauricio-aguilar-24a827261"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="https://youtube.com/@mauricioaguilar4443?si=J5582LBozYlCKnMP"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </header>
+          <div class="fila">
+            <div class="col">
+              <h2>Desarrollador FullStack</h2>
+              <p>
+                <b>"Hola, soy Mauricio, desarrollador Full Stack."</b>
+                Tengo experiencia creando sitios web y aplicaciones que combinan
+                diseño atractivo y funcionalidad eficiente. Me enfoco en
+                desarrollar soluciones prácticas, fáciles de usar y adaptadas a
+                las necesidades de cada cliente. Estoy siempre aprendiendo y
+                mejorando para ofrecer resultados de calidad que impulsen tus
+                proyectos.<b>¿Tienes una idea?</b>
+                <b>¡Hagámosla realidad juntos!</b>
+              </p>
+              <button class="btn btn-1" onclick="descargarCV()">
+                Descargar CV
+              </button>
+            </div>
+            <div class="col">
+              <div class="contenedor-img">
+                <img
+                  src="/Frontend--PortafolioWeb/public/inicio.jpg"
+                  alt="Inicio"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Seccion SERVICIOS-->
+      <section id="servicios" class="servicios">
+        <div class="fila">
+          <div class="slider">
+            <!-- Tarjetas de servicios -->
+            <div class="col">
+              <div class="card">
+                <div class="icono color1">
+                  <div class="circulo">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                </div>
+                <h3>Desarrollo Web</h3>
+                <p>
+                  "Ofrezco servicios de desarrollo web personalizados, diseñados
+                  para satisfacer las necesidades únicas de cada cliente. Creo
+                  sitios web modernos, funcionales y completamente responsivos,
+                  garantizando una experiencia de usuario fluida y optimizada en
+                  todos los dispositivos."
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="icono color2">
+                  <div class="circulo">
+                    <i class="fa-solid fa-computer"></i>
+                  </div>
+                </div>
+                <h3>Soporte Técnico</h3>
+                <p>
+                  "Ofrezco un servicio integral de soporte técnico especializado
+                  en equipos de cómputo, diseñado para brindar soluciones
+                  eficientes tanto a usuarios individuales como a pequeñas y
+                  medianas empresas."
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="icono color3">
+                  <div class="circulo">
+                    <i class="fa-solid fa-microchip"></i>
+                  </div>
+                </div>
+                <h3>Tecnología</h3>
+                <p>
+                  "Brindo soluciones tecnológicas de alto nivel, que incluyen
+                  hardware, software y equipos especializados."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Seccion SKILLS-->
+      <section class="skills" id="skills">
+        <div class="contenedor-skills">
+          <h2>Lenguajes de Programación</h2>
+          <div class="fila">
+            <div class="col">
+              <canvas id="chartJavaScript"></canvas>
+              <h3>JavaScript</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartPython"></canvas>
+              <h3>Python</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartHTML5"></canvas>
+              <h3>HTML5</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartCSS3"></canvas>
+              <h3>CSS3</h3>
+            </div>
+          </div>
+          <h2>Frameworks y Librerías</h2>
+          <div class="fila">
+            <div class="col">
+              <canvas id="chartReact.js"></canvas>
+              <h3>React.js</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartNode.js"></canvas>
+              <h3>Node.js</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartExpress.js"></canvas>
+              <h3>Express.js</h3>
+            </div>
+          </div>
+          <h2>Herramientas</h2>
+          <div class="fila">
+            <div class="col">
+              <canvas id="chartGit-GitHub"></canvas>
+              <h3>Git-GitHub</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartPostman"></canvas>
+              <h3>Postman</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartVisualStudio"></canvas>
+              <h3>Visual Studio</h3>
+            </div>
+          </div>
+          <h2>Bases de Datos</h2>
+          <div class="fila">
+            <div class="col">
+              <canvas id="chartMySQL"></canvas>
+              <h3>MySQL</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartMongoDB"></canvas>
+              <h3>MongoDB</h3>
+            </div>
+          </div>
+          <h2>Sistemas Operativos</h2>
+          <div class="fila">
+            <div class="col">
+              <canvas id="chartWindows"></canvas>
+              <h3>Windows</h3>
+            </div>
+            <div class="col">
+              <canvas id="chartMacOS"></canvas>
+              <h3>MacOS</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Seccion PROYECTOS-->
+      <section class="proyectos" id="proyectos">
+        <h1></h1>
+        <nav>
+          <a
+            href="javascript:void(0)"
+            class="borde"
+            id="item"
+            onclick="verCategoria('item')"
+            >Todo</a
+          >
+          <a
+            href="javascript:void(0)"
+            class=""
+            id="frontend"
+            onclick="verCategoria('frontend')"
+            >Frontend</a
+          >
+          <a
+            href="javascript:void(0)"
+            class=""
+            id="backend"
+            onclick="verCategoria('backend')"
+            >Backend</a
+          >
+        </nav>
+        <div class="galeria">
+          <div class="item frontend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria2.jpg"
+              alt="Proyecto 1"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 1</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="item backend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria1.jpg"
+              alt="Proyecto 2"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 2</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="item frontend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria2.jpg"
+              alt="Proyecto 3"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 3</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="item frontend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria1.jpg"
+              alt="Proyecto 4"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 4</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="item backend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria2.jpg"
+              alt="Proyecto 5"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 5</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="item backend">
+            <img
+              src="/Frontend--PortafolioWeb/public/Galeria1.jpg"
+              alt="Proyecto 6"
+              loading="lazy"
+            />
+            <div class="info">
+              <h3>Proyecto 6</h3>
+              <p>Html, Css, JavaScript.</p>
+              <a href="#"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="ver-mas-container">
+            <button id="ver-mas" class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+      </section>
+
+      <!--Seccion CONTACTO-->
+      <section class="contacto" id="contacto">
+        <div class="contenedor">
+          <h2>Contáctame</h2>
+          <div class="fila">
+            <div class="info">
+              <div class="icono">
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <h3>Ubicación</h3>
+              <p>Bogotá, Colombia</p>
+            </div>
+            <div class="info">
+              <div class="icono">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              </div>
+              <h3>Teléfono</h3>
+              <p>(+57) 3106893910</p>
+            </div>
+            <div class="info">
+              <div class="icono">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </div>
+              <h3>Correo</h3>
+              <p>mauricioaguilarpardo@gmail.com</p>
+            </div>
+            <div class="info">
+              <div class="icono">
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              </div>
+              <h3>Horario de Atención</h3>
+              <p>Lunes a Viernes: 9:00 AM a 5:00 PM</p>
+            </div>
+          </div>
+          <div class="fila">
+            <form method="POST" class="form">
+              <label for="nombre"></label>
+              <input type="text" name="nombre" placeholder="Nombre" required />
+
+              <label for="correo"></label>
+              <input type="email" name="correo" placeholder="Correo" required />
+
+              <label for="mensaje"></label>
+              <textarea
+                name="mensaje"
+                cols="30"
+                rows="10"
+                placeholder="Escribe tu mensaje"
+                required
+              ></textarea>
+              <input type="submit" value="Enviar" class="btn" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </span>
+    <footer>
+      <div class="contenedor">
+        <p>© <span id="year"></span> Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <script src="portafolioapp.js"></script>
+  </body>
+</html>

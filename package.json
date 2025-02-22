@@ -1,0 +1,30 @@
+{
+  "name": "portafolio-web",
+  "version": "1.0.0",
+  "description": "Portafolio web con backend en Node.js y Express.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "start": "node Backend--PortafolioWeb/server.js",
+    "dev": "nodemon Backend--PortafolioWeb/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "web",
+    "node",
+    "express",
+    "contact-form"
+  ],
+  "author": "",
+  "license": "ISC"
+}

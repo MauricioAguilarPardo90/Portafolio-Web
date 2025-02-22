@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Backend--PortafolioWeb/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "Frontend--PortafolioWeb/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Frontend--PortafolioWeb/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Backend--PortafolioWeb/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Frontend--PortafolioWeb/build/index.html"
+    }
+  ]
+}
