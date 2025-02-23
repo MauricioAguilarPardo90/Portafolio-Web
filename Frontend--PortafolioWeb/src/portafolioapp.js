@@ -238,7 +238,7 @@ form.addEventListener("submit", async (e) => {
   const formData = { nombre, correo, mensaje };
 
   try {
-    const response = await fetch("/api/submit", {
+    const response = await fetch("http://localhost:3000/api/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
