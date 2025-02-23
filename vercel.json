@@ -6,21 +6,26 @@
       "use": "@vercel/node"
     },
     {
-      "src": "Frontend--PortafolioWeb/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "Frontend--PortafolioWeb/build"
-      }
+      "src": "src/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.html"
+    },
     {
       "src": "/api/(.*)",
       "dest": "Backend--PortafolioWeb/server.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "Frontend--PortafolioWeb/build/index.html"
+      "src": "/public/(.*)",
+      "dest": "public/$1"
     }
   ]
 }
