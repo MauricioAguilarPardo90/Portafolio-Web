@@ -14,8 +14,8 @@
     "nodemon": "^3.1.9"
   },
   "scripts": {
-    "start": "node Backend--PortafolioWeb/server.js",
-    "dev": "nodemon Backend--PortafolioWeb/server.js",
+    "start": "node Backend/server.js",
+    "dev": "nodemon Backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
