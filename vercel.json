@@ -1,24 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "Backend--PortafolioWeb/server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "src/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "src/index.html"
-    },
     {
       "src": "/api/(.*)",
       "dest": "Backend--PortafolioWeb/server.js"
@@ -26,6 +7,10 @@
     {
       "src": "/public/(.*)",
       "dest": "public/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "src/index.html"
     }
   ]
 }
