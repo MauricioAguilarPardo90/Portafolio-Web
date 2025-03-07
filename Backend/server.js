@@ -6,9 +6,22 @@ const cors = require("cors");
 
 const app = express();
 
+// Configuración de CORS (aquí va el código nuevo)
+app.use(cors({
+  origin: [
+    "https://portafolio-web-delta-seven.vercel.app", //  dominio en Vercel
+    "http://localhost:3000" // Entorno local
+  ],
+  methods: ["POST"] // Especifica los métodos permitidos
+}));
+
 // Middlewares
+// Middlewares (versión corregida)
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ // Configuración personalizada
+  origin: ["https://portafolio-web-delta-seven.vercel.app", "http://localhost:3000"],
+  methods: ["POST"]
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ruta para manejar el formulario
