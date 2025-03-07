@@ -322,7 +322,7 @@ document.getElementById("ver-mas").addEventListener("click", function () {
 
 function descargarCV() {
   // Ruta relativa al archivo de CV
-  const url = '/src/public/CV-Profesional-Mauricio-Aguilar.pdf';
+  const url = '/public/CV-Profesional-Mauricio-Aguilar.pdf';
   
   // Crear un enlace temporal
   const link = document.createElement('a');
