@@ -16,7 +16,6 @@ app.use(cors({
 }));
 
 // Middlewares
-// Middlewares (versión corregida)
 app.use(bodyParser.json());
 app.use(cors({ // Configuración personalizada
   origin: ["https://portafolio-web-delta-seven.vercel.app", "http://localhost:3000"],
