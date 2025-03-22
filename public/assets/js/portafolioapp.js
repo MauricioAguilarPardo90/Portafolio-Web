@@ -337,5 +337,58 @@ function descargarCV() {
   document.body.removeChild(link);
 }
 
+
+// SECCION MI TRAYECTORIA
+// Funcionalidad línea de tiempo
+document.addEventListener('DOMContentLoaded', () => {
+  const momentos = document.querySelectorAll('.momento');
+  const imagenActiva = document.getElementById('imagen-activa');
+
+  // Observador de intersección para animaciones
+// Modificar el Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const rect = entry.target.getBoundingClientRect();
+      const imagenContainer = document.querySelector('.imagen-historia');
+      
+      // Calcular posición vertical
+      const scrollPosition = window.scrollY + rect.top - (window.innerHeight * 0.3);
+      imagenContainer.style.top = `${scrollPosition}px`;
+
+      // Actualizar imagen
+      imagenActiva.src = entry.target.dataset.img;
+      imagenActiva.classList.add('active');
+    }
+  });
+}, { 
+  threshold: 0.5,
+  rootMargin: '-50px 0px -50px 0px' // Zona de detección ajustada
+});
+
+  momentos.forEach(momento => {
+    // Click para navegación manual
+    momento.addEventListener('click', () => {
+      momentos.forEach(m => m.classList.remove('active'));
+      momento.classList.add('active');
+      imagenActiva.src = momento.dataset.img;
+      imagenActiva.classList.add('active');
+      momento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // Observar cada momento
+    observer.observe(momento);
+  });
+
+  // Animación inicial
+  gsap.from('.momento', {
+    duration: 1,
+    x: -100,
+    opacity: 0,
+    stagger: 0.2,
+    ease: 'power2.out'
+  });
+});
+
  // footer
 document.getElementById("year").textContent = new Date().getFullYear();
