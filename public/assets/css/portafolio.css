@@ -511,77 +511,110 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  position: relative;
 }
+
 
 .linea-tiempo {
   position: relative;
   padding: 40px 0;
 }
 
+
+
+/* Línea de tiempo vertical */
 .linea-tiempo::before {
-  left: 50px; /* Mantener posición consistente */
-  height: calc(100% - 80px); /* Ajustar altura automáticamente */
+  content: "";
+  position: absolute;
+  left: 70px;
+  top: 40px;
+  height: calc(100% - 80px);
+  width: 2px;
+  background-color: var(--color-acento);
+  z-index: 1;
 }
 
 .momento {
   position: relative;
-  margin-bottom: 40px;
-  padding-left: 80px;
+  margin-bottom: 60px;
+  padding-left: 100px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .momento:not(:last-child) {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .punto {
-  left: 46px; /* Ajuste fino de posición */
-  z-index: 2; /* Sobreponer a la línea */
-}
-
-
-.momento:hover .punto {
-  transform: translateY(-50%) scale(1.2);
+  position: absolute;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
   background-color: var(--color-acento);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
-.momento.active .punto {
-  background-color: var(--color-acento);
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
-}
-
+/* Contenido mejorado */
 .contenido-momento {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-}
-
-.momento:hover .contenido-momento {
-  transform: translateX(10px);
+  position: relative;
 }
 
 .imagen-historia {
-  align-self: start; /* Alinear con el primer momento */
-  transition: top 0.3s ease; /* Suavizar movimiento */
+  position: sticky;
+bottom: auto;
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #imagen-activa {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;
   opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.5s ease;
+  transform: scale(0.95);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #imagen-activa.active {
   opacity: 1;
   transform: scale(1);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-linea-tiempo {
+    grid-template-columns: 1fr;
+  }
+
+  .imagen-historia {
+    display: none;
+  }
+
+  .linea-tiempo::before {
+    left: 20px;
+  }
+
+  .momento {
+    padding-left: 50px;
+  }
+
+  .punto {
+    left: 14px;
+  }
+}
+
 /* CONTACTO */
 .contacto {
   background: #10019b;
