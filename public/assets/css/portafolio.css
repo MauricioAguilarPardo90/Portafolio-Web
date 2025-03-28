@@ -594,21 +594,11 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .contenedor-linea-tiempo {
-    flex-direction: column;
-  }
 
-  .imagen-historia {
-    position: sticky;
-    height: 300px;
-    width: 100%;
-  }
-}
 /* CONTACTO */
 .contacto {
-  background: #10019b;
-  color: #ffffff;
+  background: var(--color-secundario);
+  color: var(--color-texto-claro);
   padding: 40px 20px;
   padding-top: 80px;
   text-align: center;
@@ -774,6 +764,17 @@ footer {
   .proyectos .galeria .info {
     display: flex;
     flex-direction: column;
+  }
+
+  .contenedor-linea-tiempo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imagen-historia {
+    position: sticky;
+    height: 100px;
+    width: 100%;
   }
 }
 
