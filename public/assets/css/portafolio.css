@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
 
 :root {
-  --color-primario: #ffc107;
+  --color-primario: #f1f1f1;
   --color-secundario: #10019b;
-  --color-texto-claro: #f1f1f1;
+  --color-texto-claro: #f9f9f9;
   --color-texto-oscuro: #000000;
   --color-acento: #ff4500;
   --color-blanco-transparente: rgba(255, 255, 255, 0.8);
@@ -174,6 +174,12 @@ body {
 
 /* SERVICIOS */
 .servicios {
+  background: var(--color-primario);
+  padding: 5rem 0;
+
+}
+
+.contenedor-servicios {
   max-width: 1100px;
   margin: auto;
   padding-top: 80px;
@@ -298,26 +304,28 @@ body {
 
 /* SKILLS */
 .skills {
-  background: linear-gradient(
-    to right,
-    var(--color-texto-claro),
-    var(--color-texto-claro)
-  );
-  color: var(--color-texto-oscuro);
+  background-color: var(--color-texto-claro);
+  padding: 5rem 0;
+}
+.contendedor-skills {
   padding: 20px 10px;
   padding-top: 80px;
-  text-align: center;
+  max-width: 1100px;
+  margin: auto;
+ 
 }
 
 .skills h2 {
+  color: var(--color-secundario);
   font-size: 1.5rem;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }
 
-.skills .contenedor-skill {
-  max-width: 1100px;
-  margin: auto;
+.skills h3 {
+  font-size: 1rem;
+  text-align: center;
 }
 
 .skills .fila {
@@ -328,8 +336,12 @@ body {
 }
 
 /* PROYECTOS */
+
 .proyectos {
-  background-color: #f1f1f1;
+  background-color: var(--color-primario);
+  padding: 4rem 0;
+}
+.contenedor-proyectos {
   max-width: 1100px;
   margin: auto;
   padding: 40px;
@@ -497,7 +509,114 @@ body {
   }
 }
 
-/* Mi HISTORIA */
+/* Estilos Sección Historia */
+.historia {
+  padding: 4rem 0;
+  background: var(--color-texto-claro);
+}
+
+.contenedor-linea-tiempo {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.linea-tiempo {
+  flex: 1;
+  position: relative;
+  padding-left: 30px;
+}
+
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #0077b6;
+}
+
+.momento {
+  position: relative;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.punto {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 3px solid #0077b6;
+  border-radius: 50%;
+  position: absolute;
+  left: -28px;
+  top: 70px;
+}
+
+.fecha {
+  font-weight: 700;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.contenido-momento {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.momento.activo .punto {
+  background: #0077b6;
+}
+
+.imagen-historia {
+  flex: 1;
+  max-width: 600px;
+  height: 400px;
+  position: relative;
+}
+
+.slick-slider {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-linea-tiempo {
+    flex-direction: column;
+  }
+  
+  .linea-tiempo {
+    padding-left: 0;
+  }
+  
+  .linea-tiempo::before {
+    display: none;
+  }
+  
+  .momento {
+    text-align: center;
+  }
+  
+  .punto {
+    position: static;
+    margin: 0 auto 1rem;
+  }
+}
 
 
 /* CONTACTO */
@@ -670,6 +789,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
 }
 
 @media screen and (max-width: 480px) {

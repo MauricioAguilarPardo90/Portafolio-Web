@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
           {
             label: "Porcentaje",
             data: [value],
-            backgroundColor: "rgba(255, 69, 0, 1.5)", // Color de fondo
-            borderColor: "rgba(241, 241, 241, 1)", // Color del borde
+            backgroundColor: "rgba(16, 1, 155, 0.7)", // Color de fondo
+            borderColor: "rgba(0, 0, 0, 0.5)", // Color del borde
             borderWidth: 1,
           },
         ],
@@ -337,6 +337,51 @@ function descargarCV() {
   document.body.removeChild(link);
 }
 
+// Configurar imágenes
+const imagenes = [
+  '/public/assets/img/inicio.jpg',
+  '/public/assets/img/inicio2.jpg',
+  '/public/assets/img/inicio3.jpg',
+  '/public/assets/img/inicio4.jpg'
+];
+
+// Generar slides del slider
+const slider = $('.imagen-historia');
+slider.empty(); // Limpiar cualquier contenido existente
+
+// Agregar todas las imágenes al slider
+imagenes.forEach((img) => {
+  slider.append(`<img src="${img}" alt="Imagen de momento histórico">`);
+});
+
+// Inicializar Slick DESPUÉS de agregar las imágenes
+slider.slick({
+  arrows: false,
+  dots: false,
+  fade: true,
+  infinite: false
+});
+
+// Configurar momentos
+const momentos = document.querySelectorAll('.momento');
+
+// Asignar eventos a los momentos
+momentos.forEach((momento, index) => {
+  momento.addEventListener('click', () => {
+    // Actualizar clases activas
+    momentos.forEach(m => m.classList.remove('activo'));
+    momento.classList.add('activo');
+    
+    // Mover slider a la posición correspondiente
+    slider.slick('slickGoTo', index);
+  });
+});
+
+// Sincronizar cambios del slider con los momentos
+slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  momentos.forEach(m => m.classList.remove('activo'));
+  momentos[nextSlide].classList.add('activo');
+});
 
  // footer
 document.getElementById("year").textContent = new Date().getFullYear();
