@@ -287,6 +287,7 @@ $(document).ready(function () {
   });
 });
 
+
 // Función para resaltar la sección activa en el menú
 function resaltarSeccionActiva() {
   const secciones = document.querySelectorAll(" section"); // Todas las secciones
@@ -309,79 +310,79 @@ window.addEventListener("scroll", resaltarSeccionActiva);
 // Llama a la función al cargar la página para resaltar la sección inicial
 resaltarSeccionActiva();
 
-// Función para mostrar más proyectos
-document.getElementById("ver-mas").addEventListener("click", function () {
-  const hiddenItems = document.querySelectorAll(".galeria .item:nth-child(n+6)");
-  hiddenItems.forEach(item => {
-    item.style.display = "block"; // Muestra los elementos ocultos
-  });
 
-  // Ocultar el botón "Ver más" después de mostrar todos los proyectos
-  this.style.display = "none";
+// Función para mostrar más proyectos
+document.addEventListener("DOMContentLoaded", function () {
+  const btnVerMas = document.getElementById("ver-mas");
+  if (btnVerMas) { // Verifica si el elemento existe antes de añadir el event listener
+      btnVerMas.addEventListener("click", function () {
+          const hiddenItems = document.querySelectorAll(".galeria .item:nth-child(n+6)");
+          hiddenItems.forEach(item => {
+              item.style.display = "block";
+          });
+          this.style.display = "none";
+      });
+  }
 });
 
+// funcion para descargar hoja de vida 
 function descargarCV() {
-  // Ruta relativa al archivo de CV
-  const url = '/public/CV-Profesional-Mauricio-Aguilar.pdf';
+// Ruta relativa al archivo de CV
+const url = '/public/CV-Profesional-Mauricio-Aguilar.pdf';
   
-  // Crear un enlace temporal
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'CV-Profesional-Mauricio-Aguilar.pdf'; // Nombre del archivo que se descargará
+// Crear un enlace temporal
+const link = document.createElement('a');
+link.href = url;
+link.download = 'CV-Profesional-Mauricio-Aguilar.pdf'; // Nombre del archivo que se descargará
   
-  // Simular el clic en el enlace para iniciar la descarga
-  document.body.appendChild(link);
-  link.click();
+// Simular el clic en el enlace para iniciar la descarga
+document.body.appendChild(link);
+link.click();
   
-  // Eliminar el enlace temporal
-  document.body.removeChild(link);
+// Eliminar el enlace temporal
+document.body.removeChild(link);
 }
 
-// Configurar imágenes
-const imagenes = [
-  '/public/assets/img/inicio.jpg',
-  '/public/assets/img/inicio2.jpg',
-  '/public/assets/img/inicio3.jpg',
-  '/public/assets/img/inicio4.jpg'
-];
-
-// Generar slides del slider
-const slider = $('.imagen-historia');
-slider.empty(); // Limpiar cualquier contenido existente
-
-// Agregar todas las imágenes al slider
-imagenes.forEach((img) => {
-  slider.append(`<img src="${img}" alt="Imagen de momento histórico">`);
-});
-
-// Inicializar Slick DESPUÉS de agregar las imágenes
-slider.slick({
-  arrows: false,
-  dots: false,
-  fade: true,
-  infinite: false
-});
-
-// Configurar momentos
-const momentos = document.querySelectorAll('.momento');
-
-// Asignar eventos a los momentos
-momentos.forEach((momento, index) => {
-  momento.addEventListener('click', () => {
-    // Actualizar clases activas
-    momentos.forEach(m => m.classList.remove('activo'));
-    momento.classList.add('activo');
+//Funcion para  la linea de tiempo y el carrusell
+document.addEventListener('DOMContentLoaded', function() {
+  const momentos = document.querySelectorAll('.momento');
+  const imagenActiva = document.getElementById('imagen-activa');
+  
+  // Función para actualizar la imagen
+  function actualizarImagen(src) {
+    imagenActiva.classList.remove('loaded');
     
-    // Mover slider a la posición correspondiente
-    slider.slick('slickGoTo', index);
+    // Pequeño retraso para permitir la transición
+    setTimeout(() => {
+      imagenActiva.src = src;
+      imagenActiva.alt = `Imagen descriptiva de la trayectoria: ${src.split('/').pop()}`;
+      
+      // Forzar recarga de la imagen en caché
+      imagenActiva.onload = () => {
+        imagenActiva.classList.add('loaded');
+      };
+    }, 300);
+  }
+
+  // Manejar clic en los momentos
+  momentos.forEach(momento => {
+    momento.addEventListener('click', function() {
+      // Remover clase active de todos los momentos
+      momentos.forEach(m => m.classList.remove('active'));
+      
+      // Añadir clase active al momento seleccionado
+      this.classList.add('active');
+      
+      // Obtener y actualizar imagen
+      const nuevaImagen = this.getAttribute('data-img');
+      actualizarImagen(nuevaImagen);
+    });
   });
-});
 
-// Sincronizar cambios del slider con los momentos
-slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  momentos.forEach(m => m.classList.remove('activo'));
-  momentos[nextSlide].classList.add('activo');
+  // Activar el primer momento por defecto
+  if (momentos.length > 0) {
+    momentos[0].click();
+  }
 });
-
  // footer
 document.getElementById("year").textContent = new Date().getFullYear();

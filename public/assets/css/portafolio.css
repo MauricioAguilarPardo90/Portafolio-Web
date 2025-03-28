@@ -176,7 +176,6 @@ body {
 .servicios {
   background: var(--color-primario);
   padding: 5rem 0;
-
 }
 
 .contenedor-servicios {
@@ -312,7 +311,6 @@ body {
   padding-top: 80px;
   max-width: 1100px;
   margin: auto;
- 
 }
 
 .skills h2 {
@@ -512,113 +510,101 @@ body {
 /* Estilos Sección Historia */
 .historia {
   padding: 4rem 0;
-  background: var(--color-texto-claro);
 }
 
 .contenedor-linea-tiempo {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 .linea-tiempo {
-  flex: 1;
   position: relative;
-  padding-left: 30px;
+  flex: 1;
 }
 
 .linea-tiempo::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: 11px;
+  left: 20px;
   top: 0;
   height: 100%;
   width: 2px;
-  background: #0077b6;
+  background: var(--color-texto-oscuro);
 }
 
 .momento {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  padding-left: 4rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+}
+
+.momento .active .punto {
+  background: var(--color-secundario);
+  transform: scale(1.2);
 }
 
 .punto {
+  position: absolute;
+  left: 12px;
+  top: 5px;
   width: 20px;
   height: 20px;
-  background: #fff;
-  border: 3px solid #0077b6;
+  background: var(--color-secundario);
+  border: 3px solid var(--color-texto-claro);
   border-radius: 50%;
-  position: absolute;
-  left: -28px;
-  top: 70px;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .fecha {
-  font-weight: 700;
-  color: #0077b6;
+  font-weight: bold;
+  color: var(--color-secundario);
   margin-bottom: 0.5rem;
 }
 
-.contenido-momento {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.momento.activo .punto {
-  background: #0077b6;
+.contenido-momento h3 {
+  margin-top: 0;
 }
 
 .imagen-historia {
   flex: 1;
-  max-width: 600px;
-  height: 400px;
-  position: relative;
+  position: sticky;
+  top: 10rem;
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.slick-slider {
+#imagen-activa {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.slick-slide img {
-  width: 100%;
-  height: 400px;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-/* Responsive */
+#imagen-activa.loaded {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .contenedor-linea-tiempo {
     flex-direction: column;
   }
-  
-  .linea-tiempo {
-    padding-left: 0;
-  }
-  
-  .linea-tiempo::before {
-    display: none;
-  }
-  
-  .momento {
-    text-align: center;
-  }
-  
-  .punto {
-    position: static;
-    margin: 0 auto 1rem;
+
+  .imagen-historia {
+    position: sticky;
+    height: 300px;
+    width: 100%;
   }
 }
-
-
 /* CONTACTO */
 .contacto {
   background: #10019b;
@@ -789,7 +775,6 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media screen and (max-width: 480px) {
