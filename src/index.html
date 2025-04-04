@@ -179,7 +179,8 @@
 
       <!--Seccion SKILLS-->
       <section class="skills" id="skills">
-        <div class="contenedor-skills">
+      <div class="contenedor-skills">
+          <h1>Mis Habilidades</h1>
           <h2>Lenguajes de Programación</h2>
           <div class="fila">
             <div class="col">
@@ -254,34 +255,37 @@
         </div>
       </section>
 
-      <!--Seccion PROYECTOS-->
+      <!-- Seccion PROYECTOS -->
       <section class="proyectos" id="proyectos">
         <div class="contenedor-proyectos">
-          <h1></h1>
+          <h1>Mis Proyectos</h1>
           <nav>
+            <!-- Mantenemos los botones de filtro existentes -->
             <a
               href="javascript:void(0)"
               class="borde"
               id="item"
               onclick="verCategoria('item')"
-              >Todo</a
+              ><h2>Todo</h2></a
             >
             <a
               href="javascript:void(0)"
               class=""
               id="frontend"
               onclick="verCategoria('frontend')"
-              >Frontend</a
+              ><h2>Frontend</h2></a
             >
             <a
               href="javascript:void(0)"
               class=""
               id="backend"
               onclick="verCategoria('backend')"
-              >Backend</a
+              ><h2>Backend</h2></a
             >
           </nav>
-          <div class="galeria">
+          <!-- Cambiamos la galería por el slider -->
+          <div class="galeria-proyectos">
+            <!-- Mantenemos los items existentes -->
             <div class="item frontend">
               <img
                 src="/public/assets/img/Galeria2.jpg"
@@ -296,12 +300,12 @@
             </div>
             <div class="item backend">
               <img
-                src="/public/assets/img/Galeria1.jpg"
+                src="/public/assets/img/Galeria2.jpg"
                 alt="Proyecto 2"
                 loading="lazy"
               />
               <div class="info">
-                <h3>Proyecto 2</h3>
+                <h3>Proyecto 1</h3>
                 <p>Html, Css, JavaScript.</p>
                 <a href="#"><i class="fa-solid fa-eye"></i></a>
               </div>
@@ -313,7 +317,19 @@
                 loading="lazy"
               />
               <div class="info">
-                <h3>Proyecto 3</h3>
+                <h3>Proyecto 1</h3>
+                <p>Html, Css, JavaScript.</p>
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </div>
+            </div>
+            <div class="item backend">
+              <img
+                src="/public/assets/img/Galeria2.jpg"
+                alt="Proyecto 4"
+                loading="lazy"
+              />
+              <div class="info">
+                <h3>Proyecto 1</h3>
                 <p>Html, Css, JavaScript.</p>
                 <a href="#"><i class="fa-solid fa-eye"></i></a>
               </div>
@@ -321,35 +337,23 @@
             <div class="item frontend">
               <img
                 src="/public/assets/img/Galeria2.jpg"
-                alt="Proyecto 4"
-                loading="lazy"
-              />
-              <div class="info">
-                <h3>Proyecto 4</h3>
-                <p>Html, Css, JavaScript.</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></a>
-              </div>
-            </div>
-            <div class="item backend">
-              <img
-                src="/public/assets/img/Galeria1.jpg"
                 alt="Proyecto 5"
                 loading="lazy"
               />
               <div class="info">
-                <h3>Proyecto 5</h3>
+                <h3>Proyecto 1</h3>
                 <p>Html, Css, JavaScript.</p>
                 <a href="#"><i class="fa-solid fa-eye"></i></a>
               </div>
             </div>
             <div class="item backend">
               <img
-                src="/public/assets/img/Galeria1.jpg"
+                src="/public/assets/img/Galeria2.jpg"
                 alt="Proyecto 6"
                 loading="lazy"
               />
               <div class="info">
-                <h3>Proyecto 6</h3>
+                <h3>Proyecto 1</h3>
                 <p>Html, Css, JavaScript.</p>
                 <a href="#"><i class="fa-solid fa-eye"></i></a>
               </div>
@@ -361,7 +365,7 @@
       <!-- Sección HISTORIA -->
       <section class="historia" id="historia">
         <div class="contenedor-linea-tiempo">
-          <h2>Mi Historia</h2>
+          <h1>Mi Historia</h1>
           <div class="linea-tiempo">
             <!--MOMENTO 2015-->
             <div
@@ -372,7 +376,7 @@
               <div class="punto"></div>
               <div class="fecha">2015</div>
               <div class="contenido-momento">
-                <h3>Inicios en la tecnología</h3>
+                <h2>Inicios en la tecnología</h2>
                 <p>
                   Primeros conocimientos en soporte técnico y fundamentos de
                   redes.
@@ -388,7 +392,7 @@
               <div class="punto"></div>
               <div class="fecha">2018</div>
               <div class="contenido-momento">
-                <h3>Certificación profesional</h3>
+                <h2>Certificación profesional</h2>
                 <p>Obtención de certificación CCNA en redes computacionales.</p>
               </div>
             </div>
@@ -401,7 +405,7 @@
               <div class="punto"></div>
               <div class="fecha">2020</div>
               <div class="contenido-momento">
-                <h3>Desarrollo de software</h3>
+                <h2>Desarrollo de software</h2>
                 <p>
                   Transición al desarrollo web full-stack con JavaScript y
                   Node.js.
@@ -417,7 +421,7 @@
               <div class="punto"></div>
               <div class="fecha">2025</div>
               <div class="contenido-momento">
-                <h3>Desarrollo de software</h3>
+                <h2>Desarrollo de software</h2>
                 <p>
                   Transición al desarrollo web full-stack con JavaScript y
                   Node.js.
@@ -436,31 +440,31 @@
       </section>
       <!--Seccion CONTACTO-->
       <section class="contacto" id="contacto">
-        <div class="contenedor">
+        <div class="contenedor-contacto">
           <h2>Contáctame</h2>
-          <div class="fila">
-            <div class="info">
+          <div class="fila-contacto">
+            <div class="info-contacto">
               <div class="icono">
                 <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
               </div>
               <h3>Ubicación</h3>
               <p>Bogotá, Colombia</p>
             </div>
-            <div class="info">
+            <div class="info-contacto">
               <div class="icono">
                 <i class="fa-solid fa-phone" aria-hidden="true"></i>
               </div>
               <h3>Teléfono</h3>
               <p>(+57) 3106893910</p>
             </div>
-            <div class="info">
+            <div class="info-contacto">
               <div class="icono">
                 <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               </div>
               <h3>Correo</h3>
               <p>mauricioaguilarpardo@gmail.com</p>
             </div>
-            <div class="info">
+            <div class="info-contacto">
               <div class="icono">
                 <i class="fa-solid fa-clock" aria-hidden="true"></i>
               </div>

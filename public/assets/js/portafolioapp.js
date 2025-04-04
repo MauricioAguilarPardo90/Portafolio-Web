@@ -149,28 +149,81 @@ window.onscroll = function() {
 };
 
 // SECCION PROYECTOS
-// Funcion para filtrar las categorias de los proyectos
-function verCategoria(cat) {
-  const items = document.getElementsByClassName("item");
-  // Ocultar todos los items
-  for (let i = 0; i < items.length; i++) {
-    items[i].style.display = "none";
-  }
+// Funcionalidad de filtrado
+function verCategoria(categoria) {
+  const items = document.querySelectorAll('.item');
+  const botones = document.querySelectorAll('.contenedor-proyectos nav a');
+  
+  // Actualizar botones activos
+  botones.forEach(boton => {
+    boton.classList.remove('borde');
+    if (boton.id === categoria) boton.classList.add('borde');
+  });
 
-  // Mostrar los items de la categoría seleccionada
-  const itemCat = document.getElementsByClassName(cat);
-  for (let i = 0; i < itemCat.length; i++) {
-    itemCat[i].style.display = "block";
-  }
-
-  // Eliminar la clase "borde" de todos los enlaces
-  const links = document.querySelectorAll(".proyectos nav a");
-  links.forEach(link => link.classList.remove("borde"));
-
-  // Agregar la clase "borde" al enlace seleccionado
-  const itemSeleccionado = document.getElementById(cat);
-  itemSeleccionado.classList.add("borde");
+  // Filtrar elementos
+  items.forEach(item => {
+    if (categoria === 'item' || item.classList.contains(categoria)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
 }
+
+// Funcionalidad del Slider
+const galeria = document.querySelector('.galeria-proyectos');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+// Flechas de navegación
+const flechas = `
+  <div class="slider-flechas">
+    <button class="flecha-izq"><i class="fas fa-chevron-left"></i></button>
+    <button class="flecha-der"><i class="fas fa-chevron-right"></i></button>
+  </div>
+`;
+document.querySelector('.contenedor-proyectos').insertAdjacentHTML('beforeend', flechas);
+
+// Eventos para flechas
+document.querySelector('.flecha-izq').addEventListener('click', () => {
+  galeria.scrollBy({ left: -350, behavior: 'smooth' });
+});
+
+document.querySelector('.flecha-der').addEventListener('click', () => {
+  galeria.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+// Arrastrar con mouse
+galeria.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - galeria.offsetLeft;
+  scrollLeft = galeria.scrollLeft;
+  galeria.style.cursor = 'grabbing';
+});
+
+galeria.addEventListener('mouseleave', () => {
+  isDown = false;
+  galeria.style.cursor = 'grab';
+});
+
+galeria.addEventListener('mouseup', () => {
+  isDown = false;
+  galeria.style.cursor = 'grab';
+});
+
+galeria.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - galeria.offsetLeft;
+  const walk = (x - startX) * 2;
+  galeria.scrollLeft = scrollLeft - walk;
+});
+
+// Evento inicial
+document.addEventListener('DOMContentLoaded', () => {
+  verCategoria('item');
+});
 
 // SECCION MI HISTORIA
 //Funcion para  la linea de tiempo y el carrusell
